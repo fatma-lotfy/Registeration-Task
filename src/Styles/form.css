@@ -1,0 +1,31 @@
+.card{
+width:60% ;
+margin-left:20% ;
+margin-top:10px ;
+}
+.width20{
+width: 20% ;
+}
+.width80{
+    width: 80% ;
+}
+.visibilityBtn{
+   color:rgba(0, 0, 0, 0.54) !important;
+   float:right;
+   margin-top:-42px !important;
+}
+.visibilityIcon{
+    font-size:20px !important;
+}
+.mt-5{
+margin-top: 5px !important;
+}
+.redLine{
+    color: red !important;
+}
+.mt-40{
+    margin-top: 40px !important;
+}
+.mt5{
+    margin-top: 5%;
+}
