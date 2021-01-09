@@ -68,7 +68,7 @@ export default class CompanyInformation extends Component {
       company_country_id:'',
       company_city_id:'',
       company_extra_data:'',
-      lang:'en'
+      lang:''
     }
   }
   handelClick=(e)=>{
@@ -91,7 +91,7 @@ export default class CompanyInformation extends Component {
     this.props.getCompanyInfo(companyInfo)
   }
   render() {
-    const {country}=this.state
+    const {country,company_name,lang}=this.state
     return (
       <div> 
       <b>Verfiy your Company</b> 
@@ -107,19 +107,24 @@ export default class CompanyInformation extends Component {
           placeholder="Enter your company name"
           variant="outlined"
           label="COMPANY NAME"
-         className='width80'
+          className='width80'
           onChange={(e)=>this.handleChange(e)}
+          error={company_name==''&&'error'
+          }
           />
         <FormControl variant="outlined" className='width20'>
         <Select
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
           defaultValue={'en'}
+          error={lang==''&&'error'}
         >
           <MenuItem value={'en'} onClick={()=>this.setState({lang:'en'})}>English</MenuItem>
           <MenuItem value={'ar'} onClick={()=>this.setState({lang:'ar'})}>Arabic</MenuItem>
         </Select>
       </FormControl>
+      {company_name==''&&
+      <span className='redLine left'>Please Enter Youre Company Name</span>}
       </Grid>
       <Grid item xs={12}>
         <TextField
